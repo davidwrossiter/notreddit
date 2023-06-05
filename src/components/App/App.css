@@ -1,3 +1,17 @@
-.App {
+.app {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container {
+  width: 1280px;
+  border: solid blue 1px;
+}
+
+.right-side-content {
+  border: solid orange 1px;
+  margin-left: 256px;
+  height: 700px;
 }

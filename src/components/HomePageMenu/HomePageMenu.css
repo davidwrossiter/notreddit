@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Plus Jakarta Sans';
+}
+
+.left-hand-menu {
+    width: 256px;
+    /* border: solid red 2px; */
+    position: absolute;
+    top: 0;
+    margin-left: 0px;
+    padding-left: 0px;
+    height: 700px;
+    
+}
+
+/* Logo */
+
+.left-hand-menu-logo {
+    display: flex;
+}
+
+.left-hand-menu-logo p {
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* Search Bar */
+
+.left-hand-menu-search-bar {
+    display: flex;
+    border: solid #E4E4E4 1px;
+    border-radius: 6px;
+    height: 48px;
+    align-items: center;
+}
+
+.left-hand-menu-search-bar p {
+    margin-left: 10px;
+    color: #9E9E9E;
+}
+
+.left-hand-menu-search-bar img {
+    margin-left: 10px;
+    height: 24px;
+    width: 24px;
+}
