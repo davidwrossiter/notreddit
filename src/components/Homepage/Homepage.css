@@ -1,0 +1,24 @@
+/* Homepage Container */
+
+#popular-posts {
+    color: #E3E3E3;
+    font-size: 16px;
+    font-weight: 600;
+    height: 20px;
+}
+
+.home-page-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+    
+}
+
+/* Posts Section */
+
+.home-page-posts-container {
+    color: white;
+    /* border: solid red 1px; */
+    height: 1000px;
+    width: 600px;
+}

@@ -1,0 +1,101 @@
+
+/* Post */
+
+.post {
+    display: flex;
+    height: 180px;
+    border: solid #8F8F8F 1px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #2D2D2D;
+    margin-bottom: 10px;
+}
+
+/* Upvotes Section */
+
+.post-upvotes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #282828;
+    height: 180px;
+    width: 50px;
+    /* border-radius: 6px 0px 0px 6px; */
+}
+
+.upvote-arrow {
+    margin-top: -60px;
+}
+
+.downvote-arrow {
+
+}
+
+.post-upvotes p {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Post Content */
+
+.post-content {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/* Post Content Title */
+
+.post-content-title-info {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    
+}
+
+.post-content-subreddit {
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+    
+}
+
+.post-content-line {
+    width: 1px;
+    height: 12px;
+    background-color: #444444;
+    margin-left: 12px;
+}
+
+.post-content-user {
+    margin-left: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #909090;
+}
+
+/* Post Content Body */
+
+.post-content-body {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Share and Comments */
+
+.post-content-functionality {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.post-content-functionality p {
+    font-size: 10px;
+    font-weight: 500;
+    color: #AEAEAE;
+    margin-left: 6px;
+    
+}
+
+#share-image {
+    margin-left: 12px;
+}

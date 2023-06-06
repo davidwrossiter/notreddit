@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Plus Jakarta Sans';
+}
+
+/* Container Styling */
+
+.header-parent-container {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    height: 61px;
+    background-color: #232323;
+    /* margin-left: 20px; */
+    /* margin-right: 20px; */
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+/* Basic Header Alignment */
+
+.header-logo,
+.header-search-bar,
+.header-nav-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Logo */
+
+.header-logo {
+    margin-left: 20px;
+}
+
+.header-logo:hover {
+    cursor: pointer;
+
+}
+
+.header-logo p {
+    color: #DDDDDD;
+    font-size: 16px;
+    font-weight: 800;
+    padding-left: 10px;
+}
+
+/* Search Bar */
+
+.header-search-bar {
+    width: 473px;
+    background-color: #505050;
+    height: 29px;
+    border-radius: 6px;
+    width: 100%;
+    margin-right: 90px;
+    margin-left: 150px;
+
+}
+
+.header-search-bar:hover {
+    cursor:text
+}
+
+.header-search-bar p {
+    font-size: 12px;
+    color: #C3C3C3;
+    margin-left: 10px;
+}
+
+.header-search-bar img {
+    margin-left: 10px;
+}
+
+/* Nav Section */
+
+.header-nav-section {
+    margin-right: 40px;
+}
+
+.header-nav-section img {
+    margin-left: 30px;
+
+}
+
+.header-nav-section img:hover {
+    cursor: pointer;
+}
+
+.header-nav-notification-container {
+    display: flex;
+}
+
+.header-nav-notification-container:hover {
+    cursor: pointer;
+}
+
+#header-nav-notification-number {
+    position: fixed;
+    margin-left: 45px;
+    margin-top: -2px;
+    color: white;
+    background-color: #FF9839;
+    width: 14px;
+    height: 14px;
+    font-size: 8px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+}
+
+#header-nav-line {
+    width: 1px;
+    height: 24px;
+    background-color: #444444;
+    margin-left: 35px;
+}
