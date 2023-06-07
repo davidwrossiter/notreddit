@@ -1,7 +1,6 @@
 import React from "react";
 import './Header.css'
 import redditLogo from '../../icons/Group.svg';
-import searchIcon from '../../icons/MagnifyingGlass.svg';
 import notificationIcon from '../../icons/Bell.svg';
 import tagIcon from '../../icons/TagSimple.svg';
 import jsIcon from '../../icons/FileJs.svg';

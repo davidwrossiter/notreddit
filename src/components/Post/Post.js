@@ -5,8 +5,11 @@ import arrowUp from '../../icons/ArrowFatDown-2.svg';
 import subredditIcon from '../../icons/Ellipse 1.svg';
 import shareIcon from '../../icons/ShareFat.svg';
 import commentsIcon from '../../icons/Chat.svg';
+import { useSelector } from "react-redux";
+import { selectPosts } from "../../features/PostSlice";
 
-const Post = () => {
+const Post = (postID) => {
+    // const posts = useSelector(selectPosts)
     return (
         <div className="post">
             <div className="post-upvotes-container">
@@ -18,7 +21,7 @@ const Post = () => {
             </div>
             <div className="post-content">
                 <div className="post-content-title-info">
-                    <img src={subredditIcon} />
+                    <img src={subredditIcon} alt="subreddit-icon" />
                     <p className="post-content-subreddit">r/popular</p>
                     <div className="post-content-line"></div>
                     <p className="post-content-user">u/justdavibeats</p>

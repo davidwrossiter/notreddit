@@ -4,13 +4,14 @@ import Post from "../Post/Post";
 import SubredditAbout from "../SubredditAbout/SubredditAbout";
 
 const Homepage = () => {
+
     return (
         <div className="home-page-container">
             
             
                 <div className="home-page-posts-container">
                     <p id="popular-posts">Popular posts</p>
-                    <Post />
+                    <Post postID=""/>
                     <Post />
                     <Post />
                     <Post />
