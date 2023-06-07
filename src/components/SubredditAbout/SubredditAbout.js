@@ -5,6 +5,7 @@ import subredditIcon from '../../icons/Ellipse 1.svg';
 import lockIcon from '../../icons/LockSimple.svg';
 
 const SubredditAbout = () => {
+
     return (
         <div className="subreddit-about-container">
 

@@ -16,7 +16,21 @@
     /* margin-right: 20px; */
     justify-content: space-between;
     align-items: center;
+    /* display: none; */
 
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-line {
+    width: 100%;
+    height: 1px;
+    margin-top: 61px;
+    /* background-color: #444444; */
+    /* position: absolute; */
 }
 
 /* Basic Header Alignment */
@@ -32,7 +46,7 @@
 /* Logo */
 
 .header-logo {
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 .header-logo:hover {
@@ -50,13 +64,15 @@
 /* Search Bar */
 
 .header-search-bar {
-    width: 473px;
     background-color: #505050;
     height: 29px;
     border-radius: 6px;
     width: 100%;
-    margin-right: 90px;
-    margin-left: 150px;
+    margin-right: 10px;
+    margin-left: 108px;
+    border: none;
+    color: #C3C3C3;
+    padding-left: 20px;
 
 }
 
@@ -64,14 +80,36 @@
     cursor:text
 }
 
-.header-search-bar p {
-    font-size: 12px;
-    color: #C3C3C3;
+.header-search-bar img {
     margin-left: 10px;
 }
 
-.header-search-bar img {
-    margin-left: 10px;
+.search-bar-container {
+    display: flex;
+    width: 100%;
+}
+
+.search-bar-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007BFF;
+    border-radius: 6px;
+    border: none;
+    color: #f1f1f1;
+    width: 150px;
+    font-weight: bold;
+    margin-right: 80px;
+}
+
+.search-bar-container button:hover {
+    cursor: pointer;
+    background-color: #0056b3;
+}
+
+.search-bar-container button:active {
+    cursor: pointer;
+    background-color: #003d80;
 }
 
 /* Nav Section */
