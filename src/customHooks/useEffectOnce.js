@@ -13,7 +13,7 @@ export const useEffectOnce = ( effect )=> {
         renderAfterCalled.current = true;
     }
   
-    useEffect( ()=> {
+    useEffect(()=> {
   
         // only execute the effect first time around
         if (!effectCalled.current) { 
@@ -29,6 +29,9 @@ export const useEffectOnce = ( effect )=> {
           // we know it's the dummy React cycle
           if (!renderAfterCalled.current) { return; }
           if (destroyFunc.current) { destroyFunc.current(); }
+          setVal(val)
         };
-    }, []);
+        
+    },[effect, val]);
   };
+
