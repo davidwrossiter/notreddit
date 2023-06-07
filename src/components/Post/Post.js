@@ -7,32 +7,58 @@ import shareIcon from '../../icons/ShareFat.svg';
 import commentsIcon from '../../icons/Chat.svg';
 import { useSelector } from "react-redux";
 import { selectPosts } from "../../features/PostSlice";
+import { useEffectOnce } from "../../customHooks/useEffectOnce";
+import { useState } from "react";
 
-const Post = (postID) => {
-    // const posts = useSelector(selectPosts)
+const Post = ({postID, loading}) => {
+
+    const [currentPost, setCurrentPost] = useState('')
+    const posts = useSelector(selectPosts)
+    useEffectOnce(() => {
+        // console.log(postID)
+        console.log(posts)
+        posts.map((post) => {
+            if (post.postID === postID) {
+                return setCurrentPost(post)
+            } else {
+                return 'null'
+            }
+        })
+    }, [])
+
+    
+    
+        //     postID: "24ZD3L1",
+        //     postTitle: "Parents 'spit on headteacher and threaten her family' over healthy school dinners plan",
+        //     postSubreddit: "r/unitedkingdom",
+        //     postAuthor: "u/iamnotinterested2",
+        //     postLink: "https://www.reddit.com/r/unitedkingdom/comments/142tezz/parents_spit_on_headteacher_and_threaten_her/",
+        //     numberComments: "348",
+        //     numberUpvotes: "647",
+
     return (
         <div className="post">
             <div className="post-upvotes-container">
                 <div className="post-upvotes">
                     <img src={arrowUp} alt="upvote" className="upvote-arrow"/>
-                    <p>12.4k</p>
+                    <p>{currentPost.postNumberUpvotes}</p>
                     <img src={arrowDown} alt="downvote" className="downvote-arrow" />
                 </div>
             </div>
             <div className="post-content">
                 <div className="post-content-title-info">
                     <img src={subredditIcon} alt="subreddit-icon" />
-                    <p className="post-content-subreddit">r/popular</p>
+                    <p className="post-content-subreddit">{currentPost.postSubreddit}</p>
                     <div className="post-content-line"></div>
-                    <p className="post-content-user">u/justdavibeats</p>
+                    <p className="post-content-user">u/{currentPost.postAuthor}</p>
 
                 </div>
                 <div className="post-content-body">
-                    <p>A climber rescued from death's door on Mount Everest is being slammed online for thanking his sponsors instead of the sherpa who saved his life</p>
+                    <p>{currentPost.postTitle}</p>
                 </div>
                 <div className="post-content-functionality">
                     <img src={commentsIcon} alt="comments" id="comments-image"/>
-                    <p>12 Comments</p>
+                    <p>{currentPost.postNumberComments}</p>
                     <img src={shareIcon} alt="share" id="share-image"/>
                     <p>Share</p>
                 </div>
@@ -40,5 +66,4 @@ const Post = (postID) => {
         </div>
     )
 }
-
 export default Post
