@@ -3,8 +3,24 @@ import './SubredditAbout.css';
 import subredditBanner from '../../images/eric-lee-ss8Dka_Tvwg-unsplash.jpg';
 import subredditIcon from '../../icons/Ellipse 1.svg';
 import lockIcon from '../../icons/LockSimple.svg';
+import { selectPosts } from "../../features/PostSlice";
+import { useSelector } from "react-redux";
 
 const SubredditAbout = () => {
+
+    const API_ROOT = 'https://www.reddit.com';
+
+    const getSubredditPosts = async (subreddit) => {
+    const response = await fetch(`${API_ROOT}${subreddit}/about.json`);
+    const json = await response.json();
+    return json
+    // return json.data.children.map((post) => post.data);
+  };
+// ${API_ROOT}/user/${authors[i]}/about.json`
+    // const data = await getSubredditPosts('/r/ksi')
+    // console.log(data)
+
+
 
     return (
         <div className="subreddit-about-container">

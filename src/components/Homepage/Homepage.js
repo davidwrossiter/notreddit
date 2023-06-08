@@ -9,6 +9,8 @@ import { getPosts } from "../../features/PostSlice";
 import { selectPosts } from "../../features/PostSlice";
 import { useState } from "react";
 import { useEffect } from "react";
+import { SubredditMenu } from "../SubredditMenu/SubredditMenu";
+
 const Homepage = () => {
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
@@ -27,7 +29,8 @@ const Homepage = () => {
                     postAuthor: item.author,
                     postLink: item.permalink,
                     postNumberComments: item.num_comments,
-                    postNumberUpvotes: item.ups
+                    postNumberUpvotes: item.ups,
+                    postPhoto: item.url,
                 }
             )
         })
@@ -44,24 +47,10 @@ const Homepage = () => {
         const getData = async (getSubredditPosts, subreddit) => {
             try {
 
-                // setLoading(true);
                 changeLoadingState(true, setLoading)
                 let filteredData = [];
                 const data = await getSubredditPosts(subreddit);
                 console.log(data)
-                // data.map((item) => {
-                //     return filteredData.push(
-                //         {
-                //             postID: item.name,
-                //             postTitle: item.title,
-                //             postSubreddit: item.subreddit_name_prefixed,
-                //             postAuthor: item.author,
-                //             postLink: item.permalink,
-                //             postNumberComments: item.num_comments,
-                //             postNumberUpvotes: item.ups
-                //         }
-                //     )
-                // })
                 filteredData = formatData(data)
                 
                 
@@ -78,7 +67,7 @@ const Homepage = () => {
             
         }
         
-        getData(getSubredditPosts, '/r/popular')
+        getData(getSubredditPosts, '/r/geography')
 
     }, [])
 
@@ -86,7 +75,13 @@ const Homepage = () => {
         console.log(loading)
         return (
             <div className="home-page-container">
-                
+
+                    <div className="home-page-subreddit-menu-container">
+                        <p>Subreddits</p>
+                        
+                        <SubredditMenu />
+                    </div>
+                    
                 
                     <div className="home-page-posts-container">
                         <p id="popular-posts">{loading ? 'loading' : 'Popular posts'}</p>
@@ -118,6 +113,7 @@ const Homepage = () => {
                     <div className="home-page-subreddit-about-container">
                         <SubredditAbout />
                     </div>
+
                 
             </div>
         )

@@ -10,11 +10,13 @@ import { selectPosts } from "../../features/PostSlice";
 import { useState } from "react";
 import { useEffect } from "react";
 
+
 const Post = ({postID, loading}) => {
 
 
 
     const [currentPost, setCurrentPost] = useState('')
+    const [smallNumber, setSmallNumber] = useState('')
     const posts = useSelector(selectPosts)
 
 
@@ -30,28 +32,12 @@ const Post = ({postID, loading}) => {
     }
     
     useEffect(() => {
-        // console.log(postID)
-        console.log(posts)
-        // posts.map((post) => {
-        //     if (post.postID === postID) {
-        //         return setCurrentPost(post)
-        //     } else {
-        //         return 'null'
-        //     }
-        // })
+        // console.log(posts)
         getReturnedPost(posts, setCurrentPost)
+        // console.log(currentPost.postNumberUpvotes)
+        
         
     }, [])
-
-    
-    
-        //     postID: "24ZD3L1",
-        //     postTitle: "Parents 'spit on headteacher and threaten her family' over healthy school dinners plan",
-        //     postSubreddit: "r/unitedkingdom",
-        //     postAuthor: "u/iamnotinterested2",
-        //     postLink: "https://www.reddit.com/r/unitedkingdom/comments/142tezz/parents_spit_on_headteacher_and_threaten_her/",
-        //     numberComments: "348",
-        //     numberUpvotes: "647",
 
     return (
         <div className="post">
@@ -64,7 +50,7 @@ const Post = ({postID, loading}) => {
             </div>
             <div className="post-content">
                 <div className="post-content-title-info">
-                    <img src={subredditIcon} alt="subreddit-icon" />
+                    {/* <img src={subredditIcon} alt="subreddit-icon" /> */}
                     <p className="post-content-subreddit">{currentPost.postSubreddit}</p>
                     <div className="post-content-line"></div>
                     <p className="post-content-user">u/{currentPost.postAuthor}</p>
@@ -72,6 +58,7 @@ const Post = ({postID, loading}) => {
                 </div>
                 <div className="post-content-body">
                     <p>{currentPost.postTitle}</p>
+                    <img src={currentPost.postPhoto}/>
                 </div>
                 <div className="post-content-functionality">
                     <img src={commentsIcon} alt="comments" id="comments-image"/>

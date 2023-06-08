@@ -62,7 +62,7 @@
 .post-content-subreddit {
     font-size: 12px;
     font-weight: 600;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     
 }
 
@@ -85,6 +85,17 @@
 .post-content-body {
     font-size: 16px;
     font-weight: 600;
+    
+}
+
+.post-content-body p {
+    margin-right: 50px;
+}
+
+.post-content-body img {
+    width: 500px;
+    margin-right: 25px;
+    border-radius: 6px;
 }
 
 /* Share and Comments */
