@@ -7,16 +7,18 @@ import shareIcon from '../../icons/ShareFat.svg';
 import commentsIcon from '../../icons/Chat.svg';
 import { useSelector } from "react-redux";
 import { selectPosts } from "../../features/PostSlice";
-import { useEffectOnce } from "../../customHooks/useEffectOnce";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const Post = ({postID, loading}) => {
 
+
+
     const [currentPost, setCurrentPost] = useState('')
     const posts = useSelector(selectPosts)
-    useEffectOnce(() => {
-        // console.log(postID)
-        console.log(posts)
+
+
+    const getReturnedPost = (posts, setCurrentPost) => {
         posts.map((post) => {
             if (post.postID === postID) {
                 return setCurrentPost(post)
@@ -24,6 +26,21 @@ const Post = ({postID, loading}) => {
                 return 'null'
             }
         })
+    
+    }
+    
+    useEffect(() => {
+        // console.log(postID)
+        console.log(posts)
+        // posts.map((post) => {
+        //     if (post.postID === postID) {
+        //         return setCurrentPost(post)
+        //     } else {
+        //         return 'null'
+        //     }
+        // })
+        getReturnedPost(posts, setCurrentPost)
+        
     }, [])
 
     

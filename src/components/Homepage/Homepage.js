@@ -8,71 +8,82 @@ import { useDispatch } from "react-redux";
 import { getPosts } from "../../features/PostSlice";
 import { selectPosts } from "../../features/PostSlice";
 import { useState } from "react";
-import { useEffectOnce } from "../../customHooks/useEffectOnce";
-
+import { useEffect } from "react";
 const Homepage = () => {
-    
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
     
     const posts = useSelector(selectPosts) 
-    useEffectOnce(() => {
+    
+
+    const formatData = (inputData) => {
+        const returnedData = []
+        inputData.map((item) => {
+            return returnedData.push(
+                {
+                    postID: item.name,
+                    postTitle: item.title,
+                    postSubreddit: item.subreddit_name_prefixed,
+                    postAuthor: item.author,
+                    postLink: item.permalink,
+                    postNumberComments: item.num_comments,
+                    postNumberUpvotes: item.ups
+                }
+            )
+        })
+        return returnedData
+    }
+    
+    const changeLoadingState = (state, setState) => {
+        setState(state)
+    }
+
+    useEffect(() => {
         
         console.log('hello')
         const getData = async (getSubredditPosts, subreddit) => {
             try {
 
-                setLoading(true);
-                const filteredData = [];
+                // setLoading(true);
+                changeLoadingState(true, setLoading)
+                let filteredData = [];
                 const data = await getSubredditPosts(subreddit);
                 console.log(data)
-                data.map((item) => {
-                    return filteredData.push(
-                        {
-                            postID: item.name,
-                            postTitle: item.title,
-                            postSubreddit: item.subreddit_name_prefixed,
-                            postAuthor: item.author,
-                            postLink: item.permalink,
-                            postNumberComments: item.num_comments,
-                            postNumberUpvotes: item.ups
-                        }
-                    )
-                })
+                // data.map((item) => {
+                //     return filteredData.push(
+                //         {
+                //             postID: item.name,
+                //             postTitle: item.title,
+                //             postSubreddit: item.subreddit_name_prefixed,
+                //             postAuthor: item.author,
+                //             postLink: item.permalink,
+                //             postNumberComments: item.num_comments,
+                //             postNumberUpvotes: item.ups
+                //         }
+                //     )
+                // })
+                filteredData = formatData(data)
+                
                 
                 dispatch(getPosts(filteredData))
                 
-                setLoading(false)
+                changeLoadingState(false, setLoading)
                 
                 
             } catch (error) {
-                setLoading(false)
+                changeLoadingState(false, setLoading)
             }
             
 
             
         }
-        //     postID: "24ZD3L1",
-        //     postTitle: "Parents 'spit on headteacher and threaten her family' over healthy school dinners plan",
-        //     postSubreddit: "r/unitedkingdom",
-        //     postAuthor: "u/iamnotinterested2",
-        //     postLink: "https://www.reddit.com/r/unitedkingdom/comments/142tezz/parents_spit_on_headteacher_and_threaten_her/",
-        //     numberComments: "348",
-        //     numberUpvotes: "647",
-        
         
         getData(getSubredditPosts, '/r/popular')
 
+    }, [])
 
-    }, [loading])
-
-    // const returnAllNumbers = () => {
-    //     for(let i=5; i <= 100; i++) {
-    //         return <Post postID={posts[i].postID} loading={loading} />
-    //     }
-    // }
-    
     if (!loading) {
+        console.log(loading)
         return (
             <div className="home-page-container">
                 
