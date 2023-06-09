@@ -19,19 +19,19 @@ const Post = ({postID, loading}) => {
     // const [smallNumber, setSmallNumber] = useState('')
     const posts = useSelector(selectPosts)
 
-
-    const getReturnedPost = (posts, setCurrentPost) => {
-        posts.map((post) => {
-            if (post.postID === postID) {
-                return setCurrentPost(post)
-            } else {
-                return 'null'
-            }
-        })
-    
-    }
-    
     useEffect(() => {
+
+        const getReturnedPost = (posts, setCurrentPost) => {
+            posts.map((post) => {
+                if (post.postID === postID) {
+                    return setCurrentPost(post)
+                } else {
+                    return 'null'
+                }
+            })
+        
+        }
+    
         console.log(posts)
         getReturnedPost(posts, setCurrentPost)
         // console.log(currentPost.postNumberUpvotes)
