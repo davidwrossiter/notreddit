@@ -1,6 +1,6 @@
 import React  from "react";
 import './SubredditMenu.css';
-import subredditIcon from '../../icons/Ellipse 1.svg';
+// import subredditIcon from '../../icons/Ellipse 1.svg';
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
