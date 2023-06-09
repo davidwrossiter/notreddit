@@ -40,9 +40,10 @@ const Homepage = () => {
     const changeLoadingState = (state, setState) => {
         setState(state)
     }
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        const dispatch = useDispatch();
+        
         
         console.log('hello')
         const getData = async (getSubredditPosts, subreddit) => {
@@ -70,7 +71,7 @@ const Homepage = () => {
         
         getData(getSubredditPosts, '/r/PewdiepieSubmissions')
 
-    }, [])
+    }, [dispatch])
 
     if (!loading) {
         console.log(loading)
