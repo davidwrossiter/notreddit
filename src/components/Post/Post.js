@@ -37,7 +37,7 @@ const Post = ({postID, loading}) => {
         // console.log(currentPost.postNumberUpvotes)
         
         
-    }, [])
+    }, [posts, postID])
 
     return (
         <div className="post">
@@ -58,7 +58,7 @@ const Post = ({postID, loading}) => {
                 </div>
                 <div className="post-content-body">
                     <p>{currentPost.postTitle}</p>
-                    <img src={currentPost.postPhoto} alt="post-picture"/>
+                    <img src={currentPost.postPhoto} alt="post-content"/>
                 </div>
                 <div className="post-content-functionality">
                     <img src={commentsIcon} alt="comments" id="comments-image"/>

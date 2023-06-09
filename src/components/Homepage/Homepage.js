@@ -13,7 +13,7 @@ import { SubredditMenu } from "../SubredditMenu/SubredditMenu";
 
 const Homepage = () => {
     const [loading, setLoading] = useState(true);
-    const dispatch = useDispatch();
+    
     
     const posts = useSelector(selectPosts) 
     
@@ -42,6 +42,7 @@ const Homepage = () => {
     }
 
     useEffect(() => {
+        const dispatch = useDispatch();
         
         console.log('hello')
         const getData = async (getSubredditPosts, subreddit) => {
