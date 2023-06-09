@@ -67,7 +67,7 @@ const Homepage = () => {
             
         }
         
-        getData(getSubredditPosts, '/r/geography')
+        getData(getSubredditPosts, '/r/PewdiepieSubmissions')
 
     }, [])
 
