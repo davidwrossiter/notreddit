@@ -16,7 +16,7 @@ const Post = ({postID, loading}) => {
 
 
     const [currentPost, setCurrentPost] = useState('')
-    const [smallNumber, setSmallNumber] = useState('')
+    // const [smallNumber, setSmallNumber] = useState('')
     const posts = useSelector(selectPosts)
 
 
@@ -32,7 +32,7 @@ const Post = ({postID, loading}) => {
     }
     
     useEffect(() => {
-        // console.log(posts)
+        console.log(posts)
         getReturnedPost(posts, setCurrentPost)
         // console.log(currentPost.postNumberUpvotes)
         
@@ -58,7 +58,7 @@ const Post = ({postID, loading}) => {
                 </div>
                 <div className="post-content-body">
                     <p>{currentPost.postTitle}</p>
-                    <img src={currentPost.postPhoto}/>
+                    <img src={currentPost.postPhoto} alt="post-picture"/>
                 </div>
                 <div className="post-content-functionality">
                     <img src={commentsIcon} alt="comments" id="comments-image"/>

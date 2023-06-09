@@ -8,14 +8,14 @@ import lockIcon from '../../icons/LockSimple.svg';
 
 const SubredditAbout = () => {
 
-    const API_ROOT = 'https://www.reddit.com';
+//     const API_ROOT = 'https://www.reddit.com';
 
-    const getSubredditPosts = async (subreddit) => {
-    const response = await fetch(`${API_ROOT}${subreddit}/about.json`);
-    const json = await response.json();
-    return json
-    // return json.data.children.map((post) => post.data);
-  };
+//     const getSubredditPosts = async (subreddit) => {
+//     const response = await fetch(`${API_ROOT}${subreddit}/about.json`);
+//     const json = await response.json();
+//     return json
+//     // return json.data.children.map((post) => post.data);
+//   };
 // ${API_ROOT}/user/${authors[i]}/about.json`
     // const data = await getSubredditPosts('/r/ksi')
     // console.log(data)
