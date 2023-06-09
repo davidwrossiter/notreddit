@@ -7,4 +7,9 @@ export const getSubredditPosts = async (subreddit) => {
     return json.data.children.map((post) => post.data);
   };
 
-// console.log(getSubredditPosts('/r/ksi'))
+
+export const getSubredditAbout = async (subreddit) => {
+    const response = await fetch(`${API_ROOT}${subreddit}/about.json`);
+    const json = await response.json();
+    return json.data
+};

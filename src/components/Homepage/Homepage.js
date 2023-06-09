@@ -31,6 +31,7 @@ const Homepage = () => {
                     postNumberComments: item.num_comments,
                     postNumberUpvotes: item.ups,
                     postPhoto: item.url,
+                    postHint: item.post_hint
                 }
             )
         })
@@ -45,7 +46,7 @@ const Homepage = () => {
     useEffect(() => {
         
         
-        console.log('hello')
+        // console.log('hello')
         const getData = async (getSubredditPosts, subreddit) => {
             try {
 
