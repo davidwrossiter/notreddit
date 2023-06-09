@@ -61,7 +61,7 @@ export const SubredditMenu = () => {
 
         (getData(getSubredditAbout, '/r/ksi'))
 
-    }, [])
+    }, [dispatch])
 
     if(!loading) {
         return(
