@@ -2,7 +2,7 @@ import React from "react";
 import './Post.css';
 import arrowDown from '../../icons/ArrowFatDown.svg';
 import arrowUp from '../../icons/ArrowFatDown-2.svg';
-import subredditIcon from '../../icons/Ellipse 1.svg';
+// import subredditIcon from '../../icons/Ellipse 1.svg';
 import shareIcon from '../../icons/ShareFat.svg';
 import commentsIcon from '../../icons/Chat.svg';
 import { useSelector } from "react-redux";

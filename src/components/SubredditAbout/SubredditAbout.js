@@ -3,8 +3,8 @@ import './SubredditAbout.css';
 import subredditBanner from '../../images/eric-lee-ss8Dka_Tvwg-unsplash.jpg';
 import subredditIcon from '../../icons/Ellipse 1.svg';
 import lockIcon from '../../icons/LockSimple.svg';
-import { selectPosts } from "../../features/PostSlice";
-import { useSelector } from "react-redux";
+// import { selectPosts } from "../../features/PostSlice";
+// import { useSelector } from "react-redux";
 
 const SubredditAbout = () => {
 
