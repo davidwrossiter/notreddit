@@ -46,7 +46,7 @@ const SubredditAbout = ({loadingState}) => {
         }
     
         getData()
-    }, [loading])
+    }, [loading, thisData])
 
     
 
