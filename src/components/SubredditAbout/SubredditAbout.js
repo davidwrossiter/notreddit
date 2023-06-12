@@ -1,11 +1,11 @@
 import React from "react";
 import './SubredditAbout.css';
-import subredditIcon from '../../icons/Ellipse 1.svg';
+// import subredditIcon from '../../icons/Ellipse 1.svg';
 import lockIcon from '../../icons/LockSimple.svg';
 import { useSelector } from "react-redux";
 import { shortenUrl } from "../../functions/functions";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { selectCurrentSub } from "../../features/CurrentSubSlice";
 import { useState } from "react";
 
@@ -17,7 +17,7 @@ const SubredditAbout = ({loadingState}) => {
     const [subredditTitle, setSubredditTitle] = useState('');
     const [subredditInfo, setSubredditInfo] = useState('')
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const thisData = useSelector(selectCurrentSub);
 
 
@@ -35,8 +35,8 @@ const SubredditAbout = ({loadingState}) => {
                 console.log(thisData)
                 setCurrentImage(thisData.subInfo.banner_background_image)
                 setProfileImage(thisData.subInfo.community_icon)
-                // setSubredditInfo
-                // subredditTitle
+                setSubredditInfo(thisData.subInfo.public_description)
+                setSubredditTitle(thisData.subName)
                 setLoading(false)
     
             } catch (error) {
@@ -46,7 +46,7 @@ const SubredditAbout = ({loadingState}) => {
         }
     
         getData()
-    })
+    }, [loading])
 
     
 
@@ -65,11 +65,11 @@ const SubredditAbout = ({loadingState}) => {
     
                 <div className="subreddit-about-title">
                     <img src={shortenUrl(profileImage)} alt="subreddit-icon"/>
-                    <p>r/popular</p>
+                    <p>{subredditTitle}</p>
                 </div>
     
                 <div className="subreddit-about-description">
-                    <p>The best posts on Reddit for you, pulled from the most active communities on Reddit. Check here to see the most shared, upvoted, and commented content on the internet.</p>
+                    <p>{subredditInfo}</p>
                 </div>
     
                 <div className="subreddit-about-line">
