@@ -85,15 +85,30 @@
 .post-content-body {
     font-size: 16px;
     font-weight: 600;
-    
+    width: 500px;
+    overflow: hidden;
+    /* border: solid red 10px; */
+}
+
+.post-content-body-image-container {
+    display: flex;
+    justify-content: center;
+    /* max-width: 500px; */
+    /* height: 500px; */
+    overflow: hidden;
+    border-radius: 6px;
 }
 
 .post-content-body p {
     margin-right: 50px;
+    display: flex;
+
 }
 
-.post-content-body img {
-    width: 500px;
+.post-content-body-image-container img {
+  
+    max-height: 500px; 
+ 
     margin-right: 25px;
     border-radius: 6px;
 }

@@ -77,7 +77,8 @@ const Post = ({postID, loading}) => {
                 <div className="post-content-body">
                     <p>{currentPost.postTitle}</p>
                     
-                    { currentPost.postHint === "image" ? <img src={currentPost.postPhoto} alt="post-content"/> : '' }
+                        { currentPost.postHint === "image" ? <div className="post-content-body-image-container"><img src={currentPost.postPhoto} alt="post-content"/></div> : '' }
+                    
                 </div>
                 <div className="post-content-functionality">
                     <img src={commentsIcon} alt="comments" id="comments-image"/>

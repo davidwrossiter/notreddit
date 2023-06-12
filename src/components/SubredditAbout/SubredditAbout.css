@@ -3,7 +3,7 @@
 .subreddit-about-container {
     overflow: hidden;
     border: solid #DFDFDF 1px;
-    height: 324px;
+    /* height: 324px; */
     width: 300px;
     margin-left: 10px;
     border-radius: 6px 6px 6px 6px;
@@ -18,8 +18,16 @@
 /* Banner Section */
 
 #subreddit-banner {
+    /* height: 48px; */
+    
     width: 300px;
-    height: 48px;
+
+}
+
+.subreddit-about-banner {
+    width: 300px;
+    /* height: 48px; */
+    overflow: hidden;
 }
 
 /* Title */
@@ -29,21 +37,29 @@
     margin-left: 25px;
     margin-top: 5px;
 
+    align-items: center;
 
 }
 
 .subreddit-about-title p {
     color:#DFDFDF;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
     margin-left: 10px;
+    /* margin-bottom: 2px; */
+}
+
+.subreddit-about-title img {
+    width: 32px;
+    margin-top: 2px;
+    border-radius: 180px;
 }
 
 /* description */
 
 .subreddit-about-description p {
     color:#DFDFDF;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     margin-left: 25px;
     margin-right: 25px;
@@ -63,7 +79,7 @@
 
 .subreddit-about-error-message {
     color: #E7E7E7;
-    font-size: 10px;
+    font-size: 12px;
     margin-left: 25px;
     margin-right: 25px;
     outline-width: 250px;
@@ -85,6 +101,7 @@
     border-radius: 6px;
     justify-content: center;
     height: 30px;
+    margin-bottom: 20px;
 }
 
 .subreddit-about-join-button button:hover {

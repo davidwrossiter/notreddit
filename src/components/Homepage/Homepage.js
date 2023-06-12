@@ -114,7 +114,7 @@ const Homepage = () => {
                         <Post postID={posts[23].postID} loading={loading} />
                     </div>
                     <div className="home-page-subreddit-about-container">
-                        <SubredditAbout />
+                        <SubredditAbout loadingState={loading}/>
                     </div>
 
                 

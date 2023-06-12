@@ -9,7 +9,10 @@ export const CurrentSubSlice = createSlice({
     initialState,
     reducers: {
         setCurrentSub: (state, action) => {
-            state.currentSub = action.payload
+            state.currentSub = {
+                subName: action.payload.subName,
+                subInfo: action.payload.subInfo
+            }
         }
     }
 })
